@@ -1,13 +1,11 @@
 package com.yuzh.lambda;
 
-import com.sun.org.glassfish.external.statistics.Statistic;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 /**
@@ -17,6 +15,7 @@ import java.util.stream.Stream;
  * 3.终止操作
  */
 public class TestStreamApi2 {
+
     List<Employee> employees = Arrays.asList(
             new Employee(1, "zhangsan", 12, 4331.99),
             new Employee(2,"lisi",74,4938.99),
@@ -38,6 +37,7 @@ public class TestStreamApi2 {
         list2.add(list);
         System.out.println(list2);
     }
+
     @Test
     public void test5(){
         List<String> list = Arrays.asList("aaa", "bbb", "ccc", "ddd", "eee");
