@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 public class TestStreamApi2 {
 
     List<Employee> employees = Arrays.asList(
-            new Employee(1, "zhangsan", 12, 4331.99),
+            new Employee(1, "zhangsan", 12, 4331.99, Employee.Status.FREE),
             new Employee(2,"lisi",74,4938.99),
             new Employee(3,"wangwu",53,4643.11),
             new Employee(3,"wangwu",53,4643.11),
@@ -26,6 +26,20 @@ public class TestStreamApi2 {
             new Employee(3,"wangwu",53,4643.11),
             new Employee(3,"wangwu",53,4643.11),
             new Employee(4,"zhaoliu",45,7873.43));
+
+    @Test
+    public void test7(){
+        List<String> list = Arrays.asList("aaa", "bbbb", "cccc", "dddd", "eeee");
+        list.stream().sorted().forEach(System.out::println);
+
+        employees.stream().sorted((e1,e2)->{
+            if (e1.getAge().equals(e1.getAge())) {
+                return e1.getName().compareTo(e2.getName());
+            } else {
+                return -e1.getName().compareTo(e2.getName());
+            }
+        }).forEach(System.out::println);
+    }
 
     //中间操作
     @Test

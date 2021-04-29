@@ -5,8 +5,23 @@ import java.util.Objects;
 public class Employee {
     private int id;
     private String name;
-    private int age;
-    private double account;
+    private Integer age;
+    private Double account;
+    private Status status;
+
+    public enum Status{
+        FREE,
+        BUSY,
+        VOCATION;
+    }
+
+    public Employee(int id, String name, Integer age, Double account, Status status) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.account = account;
+        this.status = status;
+    }
 
     public Employee() {
     }
@@ -48,36 +63,45 @@ public class Employee {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public double getAccount() {
-        return account;
-    }
-
-    public void setAccount(double account) {
-        this.account = account;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
         return id == employee.id &&
-                age == employee.age &&
-                Double.compare(employee.account, account) == 0 &&
-                Objects.equals(name, employee.name);
+                name.equals(employee.name) &&
+                age.equals(employee.age) &&
+                account.equals(employee.account) &&
+                status == employee.status;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, name, age, account);
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public Double getAccount() {
+        return account;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setAccount(Double account) {
+        this.account = account;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override
@@ -87,6 +111,7 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", account=" + account +
+                ", status=" + status +
                 '}';
     }
 }
