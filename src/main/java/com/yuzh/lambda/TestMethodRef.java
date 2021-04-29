@@ -53,9 +53,9 @@ public class TestMethodRef {
         Function<Integer,Employee> fun2=Employee::new;
         Employee employee = fun2.apply(101);
         System.out.println(employee);
-
         BiFunction<Integer,Integer,Employee> bf=Employee::new;
     }
+
     /*类::实例方法名*/
     @Test
     public void test4(){
@@ -63,6 +63,7 @@ public class TestMethodRef {
 
         BiPredicate<String,String> bp2= String::equals;
     }
+
     /*类::静态方法名*/
     @Test
     public void test3() {
@@ -79,6 +80,7 @@ public class TestMethodRef {
         Consumer<String > con2=System.out::println;
         con2.accept("abcdef");
     }
+
     @Test
     public void test2(){
         Employee emp = new Employee();
